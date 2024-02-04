@@ -1,0 +1,190 @@
+id,trigger,conditions,script,text,options,notes
+
+# New game creation,,,,,, 
+ngcModAncienExplorerStart,AddNewGameChoices,,"SetTooltip ngcModAncienExplorer ""Having multiple time explored and grow an empire.\n you have experience to start again with more choice""",,"8:ngcModAncienExplorer:An ancient explorer coming back to life to, again, explore and start an empire (Modded start)",
+
+# Flag ship
+ngcModAncienExplorerflag,NewGameOptionSelected,$option == ngcModAncienExplorer,"$ngcModAncienExplorerSelected = true","What do you want as your flag ship?","0:ngcModAncienExplorerflagNo:Who need a flag ship
+1:ngcModAncienExplorerflagEagle:Eagle XIV cruiser
+2:ngcModAncienExplorerflagDoom:Doom phase cruiser
+3:ngcModAncienExplorerflagApogee:Apogee cruiser
+4:ngcModAncienExplorerflagHammerhead:Hammerhead destroyer
+4:ngcModAncienExplorerflagShrike:Shrike light destroyer",
+
+
+ngcModAncienExplorerflagNo,NewGameOptionSelected,$option == ngcModAncienExplorerflagNo,"FireAll ngcModAncienExplorerEscort1Option",,,
+ngcModAncienExplorerflageagle,NewGameOptionSelected,$option == ngcModAncienExplorerflagEagle,"NGCAddShip eagle_xiv_Elite
+FireAll ngcModAncienExplorerEscort1Option",,,
+ngcModAncienExplorerflagDoom,NewGameOptionSelected,$option == ngcModAncienExplorerflagDoom,"NGCAddShip doom_Attack
+FireAll ngcModAncienExplorerEscort1Option",,,
+ngcModAncienExplorerflagApogee,NewGameOptionSelected,$option == ngcModAncienExplorerflagApogee,"NGCAddShip apogee_Starting
+FireAll ngcModAncienExplorerEscort1Option",,,
+ngcModAncienExplorerflagHammerhead,NewGameOptionSelected,$option == ngcModAncienExplorerflagHammerhead,"NGCAddShip hammerhead_Balanced
+FireAll ngcModAncienExplorerEscort1Option",,,
+ngcModAncienExplorerflagShrike,NewGameOptionSelected,$option == ngcModAncienExplorerflagShrike,"NGCAddShip shrike_Attack
+FireAll ngcModAncienExplorerEscort1Option",,,
+
+# Escort ship 1
+ngcModAncienExplorerEscort1,ngcModAncienExplorerEscort1Option,,,"What do you want as your escort ship?","0:ngcModAncienExplorerEscort1No:Who need small ships
+1:ngcModAncienExplorerEscort1Enforcer:Enforcer XIV destroyer
+3:ngcModAncienExplorerEscort1Shrike:Shrike light destroyer
+2:ngcModAncienExplorerEscort1Wolf:Wolf frigate
+2:ngcModAncienExplorerEscort1Lasher:Lasher frigate
+2:ngcModAncienExplorerEscort1Afflictor:Afflictor phase frigate", 
+
+ngcModAncienExplorerEscort1No,NewGameOptionSelected,$option == ngcModAncienExplorerEscort1No,"FireAll ngcModAncienExplorerCarrierOption",,,
+ngcModAncienExplorerEscort1Enforcer,NewGameOptionSelected,$option == ngcModAncienExplorerEscort1Enforcer,"NGCAddShip enforcer_XIV_Elite
+FireAll ngcModAncienExplorerEscort2Option",,,
+ngcModAncienExplorerEscort1Shrike,NewGameOptionSelected,$option == ngcModAncienExplorerEscort1Shrike,"NGCAddShip shrike_Attack
+FireAll ngcModAncienExplorerEscort2Option",,,
+ngcModAncienExplorerEscort1Wolf,NewGameOptionSelected,$option == ngcModAncienExplorerEscort1Wolf,"NGCAddShip wolf_CS
+FireAll ngcModAncienExplorerEscort2Option",,,
+ngcModAncienExplorerEscort1Lasher,NewGameOptionSelected,$option == ngcModAncienExplorerEscort1Lasher,"NGCAddShip lasher_Standard
+FireAll ngcModAncienExplorerEscort2Option",,,
+ngcModAncienExplorerEscort1Afflictor,NewGameOptionSelected,$option == ngcModAncienExplorerEscort1Afflictor,"NGCAddShip afflictor_Strike
+FireAll ngcModAncienExplorerEscort2Option",,,
+
+# Escort ship 2
+ngcModAncienExplorerEscort2,ngcModAncienExplorerEscort2Option,,,"Maybe another escort?","0:ngcModAncienExplorerEscort2No:One is enough for me
+1:ngcModAncienExplorerEscort2Enforcer:Enforcer XIV destroyer
+3:ngcModAncienExplorerEscort2Shrike:Shrike light destroyer
+2:ngcModAncienExplorerEscort2Wolf:Wolf frigate
+2:ngcModAncienExplorerEscort2Lasher:Lasher frigate
+2:ngcModAncienExplorerEscort2Afflictor:Afflictor phase frigate", 
+
+ngcModAncienExplorerEscort2No,NewGameOptionSelected,$option == ngcModAncienExplorerEscort2No,"FireAll ngcModAncienExplorerCarrierOption",,,
+ngcModAncienExplorerEscort2Enforcer,NewGameOptionSelected,$option == ngcModAncienExplorerEscort2Enforcer,"NGCAddShip enforcer_XIV_Elite
+FireAll ngcModAncienExplorerEscort3Option",,,
+ngcModAncienExplorerEscort2Shrike,NewGameOptionSelected,$option == ngcModAncienExplorerEscort2Shrike,"NGCAddShip shrike_Attack
+FireAll ngcModAncienExplorerEscort3Option",,,
+ngcModAncienExplorerEscort2Wolf,NewGameOptionSelected,$option == ngcModAncienExplorerEscort2Wolf,"NGCAddShip wolf_CS
+FireAll ngcModAncienExplorerEscort3Option",,,
+ngcModAncienExplorerEscort2Lasher,NewGameOptionSelected,$option == ngcModAncienExplorerEscort2Lasher,"NGCAddShip lasher_Standard
+FireAll ngcModAncienExplorerEscort3Option",,,
+ngcModAncienExplorerEscort2Afflictor,NewGameOptionSelected,$option == ngcModAncienExplorerEscort2Afflictor,"NGCAddShip afflictor_Strike
+FireAll ngcModAncienExplorerEscort3Option",,,
+
+# Escort ship 3
+ngcModAncienExplorerEscort3,ngcModAncienExplorerEscort3Option,,,"Are you greedy?","0:ngcModAncienExplorerEscort3No:No
+1:ngcModAncienExplorerEscort3Enforcer:2 * Enforcer XIV destroyer
+3:ngcModAncienExplorerEscort3Shrike:2 * Shrike light destroyer
+2:ngcModAncienExplorerEscort3Wolf:2 * Wolf frigate
+2:ngcModAncienExplorerEscort3Lasher:2 * Lasher frigate
+2:ngcModAncienExplorerEscort3Afflictor:2 * Afflictor phase frigate", 
+
+ngcModAncienExplorerEscort3No,NewGameOptionSelected,$option == ngcModAncienExplorerEscort3No,"FireAll ngcModAncienExplorerCarrierOption",,,
+ngcModAncienExplorerEscort3Enforcer,NewGameOptionSelected,$option == ngcModAncienExplorerEscort3Enforcer,"NGCAddShip enforcer_XIV_Elite
+NGCAddShip enforcer_XIV_Elite
+FireAll ngcModAncienExplorerCarrierOption",,,
+ngcModAncienExplorerEscort3Shrike,NewGameOptionSelected,$option == ngcModAncienExplorerEscort3Shrike,"NGCAddShip shrike_Attack
+NGCAddShip shrike_Attack
+FireAll ngcModAncienExplorerCarrierOption",,,
+ngcModAncienExplorerEscort3Wolf,NewGameOptionSelected,$option == ngcModAncienExplorerEscort3Wolf,"NGCAddShip wolf_CS
+NGCAddShip wolf_CS
+FireAll ngcModAncienExplorerCarrierOption",,,
+ngcModAncienExplorerEscort3Lasher,NewGameOptionSelected,$option == ngcModAncienExplorerEscort3Lasher,"NGCAddShip lasher_Standard
+NGCAddShip lasher_Standard
+FireAll ngcModAncienExplorerCarrierOption",,,
+ngcModAncienExplorerEscort3Afflictor,NewGameOptionSelected,$option == ngcModAncienExplorerEscort3Afflictor,"NGCAddShip afflictor_Strike
+NGCAddShip afflictor_Strike
+FireAll ngcModAncienExplorerCarrierOption",,,
+
+# Carrier
+ngcModAncienExplorerCarrier,ngcModAncienExplorerCarrierOption,,,"Carrier can be nice","0:ngcModAncienExplorerCarrierNo:Not for me, thanks
+2:ngcModAncienExplorerCarrierHeron:Heron fast carrier (cruiser)
+3:ngcModAncienExplorerCarrierCondor:Condor light carrier (destroyer)
+4:ngcModAncienExplorerCarrierDrover:Drover light carrier (destroyer)
+5:ngcModAncienExplorerCarrierShepperd:Shepperd drone tender (frigate)", 
+
+ngcModAncienExplorerCarrierNo,NewGameOptionSelected,$option == ngcModAncienExplorerCarrierNo,"FireAll ngcModAncienExplorerTankerOption",,,
+ngcModAncienExplorerCarrierHeron,NewGameOptionSelected,$option == ngcModAncienExplorerCarrierHeron,"NGCAddShip heron_Strike
+FireAll ngcModAncienExplorerTankerOption",,,
+ngcModAncienExplorerCarrierCondor,NewGameOptionSelected,$option == ngcModAncienExplorerCarrierCondor,"NGCAddShip condor_Strike
+FireAll ngcModAncienExplorerTankerOption",,,
+ngcModAncienExplorerCarrierDrover,NewGameOptionSelected,$option == ngcModAncienExplorerCarrierDrover,"NGCAddShip drover_Strike
+FireAll ngcModAncienExplorerTankerOption",,,
+ngcModAncienExplorerCarrierShepperd,NewGameOptionSelected,$option == ngcModAncienExplorerCarrierShepperd,"NGCAddShip shepherd_Frontier
+FireAll ngcModAncienExplorerTankerOption",,,
+
+# Tanker
+ngcModAncienExplorerTanker,ngcModAncienExplorerTankerOption,,,"Do you need more fuel capacity?","0:ngcngcModAncienExplorerTankerNo:I have efficient flying
+2:ngcModAncienExplorerTankerRevenant:Revenant phase tender (cruiser)
+3:ngcModAncienExplorerTankerPhaeton:Phaeton tanker (destroyer)
+4:ngcModAncienExplorerTankerDram:Dram tanker (frigate)", 
+
+ngcngcModAncienExplorerTankerNo,NewGameOptionSelected,$option == ngcngcModAncienExplorerTankerNo,"FireAll ngcModAncienExplorerCargoOption",,,
+ngcModAncienExplorerTankerRevenant,NewGameOptionSelected,$option == ngcModAncienExplorerTankerRevenant,"NGCAddShip revenant_Elite
+FireAll ngcModAncienExplorerCargoOption",,,
+ngcModAncienExplorerTankerPhaeton,NewGameOptionSelected,$option == ngcModAncienExplorerTankerPhaeton,"NGCAddShip phaeton_Standard
+FireAll ngcModAncienExplorerCargoOption",,,
+ngcModAncienExplorerTankerDram,NewGameOptionSelected,$option == ngcModAncienExplorerTankerDram,"NGCAddShip dram_Light
+FireAll ngcModAncienExplorerCargoOption",,,
+
+# Cargo
+ngcModAncienExplorerCargo,ngcModAncienExplorerCargoOption,,,"Are you greedy?","0:ngcModAncienExplorerCargoNo:No need, I don't keep a lots of thing
+2:ngcModAncienExplorerCargoRevenant:Revenant phase tender (cruiser)
+3:ngcModAncienExplorerCargoBuffalo:Buffalo freighter (destroyer)
+4:ngcModAncienExplorerCargoTarsus:Tarsus freighter (destroyer)
+5:ngcModAncienExplorerCargoMule:Mule combat freighter (destroyer)
+6:ngcModAncienExplorerCargoWayfarer:Wayfarer combat freighter (frigate)", 
+
+ngcModAncienExplorerCargoNo,NewGameOptionSelected,$option == ngcModAncienExplorerCargoNo,"FireAll ngcModAncienExplorerSalvageOption",,,
+ngcModAncienExplorerCargoRevenant,NewGameOptionSelected,$option == ngcModAncienExplorerCargoRevenant,"NGCAddShip revenant_Elite
+FireAll ngcModAncienExplorerSalvageOption",,,
+ngcModAncienExplorerCargoBuffalo,NewGameOptionSelected,$option == ngcModAncienExplorerCargoBuffalo,"NGCAddShip buffalo_Standard
+FireAll ngcModAncienExplorerSalvageOption",,,
+ngcModAncienExplorerCargoTarsus,NewGameOptionSelected,$option == ngcModAncienExplorerCargoTarsus,"NGCAddShip tarsus_Standard
+FireAll ngcModAncienExplorerSalvageOption",,,
+ngcModAncienExplorerCargoMule,NewGameOptionSelected,$option == ngcModAncienExplorerCargoMule,"NGCAddShip mule_Standard
+FireAll ngcModAncienExplorerSalvageOption",,,
+ngcModAncienExplorerCargoWayfarer,NewGameOptionSelected,$option == ngcModAncienExplorerCargoWayfarer,"NGCAddShip wayfarer_Standard
+FireAll ngcModAncienExplorerSalvageOption",,,
+
+# Salvage rig
+ngcModAncienExplorerSalvage,ngcModAncienExplorerSalvageOption,,,"Do you want better salvage?","0:ngcModAncienExplorerSalvageNo:I do not need help!
+2:ngcModAncienExplorerSalvageRig: Salvage Rig 
+3:ngcModAncienExplorerSalvageShepperd: Shepperd drone tender (frigate)", 
+
+ngcModAncienExplorerSalvageNo,NewGameOptionSelected,$option == ngcModAncienExplorerSalvageNo,"FireAll ngcModAncienExplorerCreditOption",,,
+ngcModAncienExplorerSalvageRig,NewGameOptionSelected,$option == ngcModAncienExplorerSalvageRig,"NGCAddShip crig_Standard
+FireAll ngcModAncienExplorerCreditOption",,,
+ngcModAncienExplorerSalvageShepperd,NewGameOptionSelected,$option == ngcModAncienExplorerSalvageShepperd,"NGCAddShip shepherd_Frontier
+FireAll ngcModAncienExplorerCreditOption",,,
+
+# Credit
+ngcModAncienExplorerCredit,ngcModAncienExplorerCreditOption,,,"Who want more credits?","0:ngcModAncienExplorerCreditNo:I will earn all of it myself
+2:ngcModAncienExplorerCredit18: 18k 
+3:ngcModAncienExplorerCredit50: 50k 
+4:ngcModAncienExplorerCredit100: 100k", 
+
+ngcModAncienExplorerCreditNo,NewGameOptionSelected,$option == ngcModAncienExplorerCreditNo,"FireAll ngcModAncienExplorerSupplyOption",,,
+ngcModAncienExplorerCredit18,NewGameOptionSelected,$option == ngcModAncienExplorerCredit18,"NGCAddCredits 18000
+FireAll ngcModAncienExplorerSupplyOption",,,
+ngcModAncienExplorerCredit50,NewGameOptionSelected,$option == ngcModAncienExplorerCredit50,"NGCAddCredits 50000
+FireAll ngcModAncienExplorerSupplyOption",,,
+ngcModAncienExplorerCredit100,NewGameOptionSelected,$option == ngcModAncienExplorerCredit100,"NGCAddCredits 100000
+FireAll ngcModAncienExplorerSupplyOption",,,
+
+# Supply
+ngcModAncienExplorerSupply,ngcModAncienExplorerSupplyOption,,,"Maybe some more supply?","0:ngcModAncienExplorerSupplyNo:I will do whith what I have
+2:ngcModAncienExplorerSupply50: 50 
+4:ngcModAncienExplorerSupply100: 100 
+5:ngcModAncienExplorerSupply200: 200
+6:ngcModAncienExplorerSupply500: 500
+7:ngcModAncienExplorerSupply1000: 1000",
+
+ngcModAncienExplorerSupplyNo,NewGameOptionSelected,$option == ngcModAncienExplorerSupplyNo,"FireAll ngcModAncienExplorerEndOption",,,
+ngcModAncienExplorerSupply50,NewGameOptionSelected,$option == ngcModAncienExplorerSupply50,"NGCAddCargo RESOURCES supplies 50
+FireAll ngcModAncienExplorerEndOption",,,
+ngcModAncienExplorerSupply100,NewGameOptionSelected,$option == ngcModAncienExplorerSupply100,"NGCAddCargo RESOURCES supplies 100
+FireAll ngcModAncienExplorerEndOption",,,
+ngcModAncienExplorerSupply200,NewGameOptionSelected,$option == ngcModAncienExplorerSupply200,"NGCAddCargo RESOURCES supplies 200
+FireAll ngcModAncienExplorerEndOption",,,
+ngcModAncienExplorerSupply500,NewGameOptionSelected,$option == ngcModAncienExplorerSupply500,"NGCAddCargo RESOURCES supplies 500
+FireAll ngcModAncienExplorerEndOption",,,
+ngcModAncienExplorerSupply1000,NewGameOptionSelected,$option == ngcModAncienExplorerSupply1000,"NGCAddCargo RESOURCES supplies 1000
+FireAll ngcModAncienExplorerEndOption",,,
+
+
+# End of mod
+ngcModAncienExplorerEnd,ngcModAncienExplorerEndOption,,,"End of modded start, do not hesitate to give feedback","0:ngcNormal:Continue",

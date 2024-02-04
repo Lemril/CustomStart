@@ -1,0 +1,9 @@
+{
+	"id":"custom_start",
+	"name":"Custom Start",
+    "utility":"true",
+	"author":"Lemril",
+	"version":"1.0.0",
+	"description":"Custom game start that let you choose your ship from a predefined selection",
+    "gameVersion":"0.97a-RC6",
+}
