@@ -9,7 +9,7 @@ ngcModAncienExplorerflag,NewGameOptionSelected,$option == ngcModAncienExplorer,"
 2:ngcModAncienExplorerflagDoom:Doom phase cruiser
 3:ngcModAncienExplorerflagApogee:Apogee cruiser
 4:ngcModAncienExplorerflagHammerhead:Hammerhead destroyer
-4:ngcModAncienExplorerflagShrike:Shrike light destroyer",
+5:ngcModAncienExplorerflagShrike:Shrike light destroyer",
 
 
 ngcModAncienExplorerflagNo,NewGameOptionSelected,$option == ngcModAncienExplorerflagNo,"FireAll ngcModAncienExplorerEscort1Option",,,
@@ -145,10 +145,19 @@ ngcModAncienExplorerSalvage,ngcModAncienExplorerSalvageOption,,,"Do you want bet
 2:ngcModAncienExplorerSalvageRig: Salvage Rig 
 3:ngcModAncienExplorerSalvageShepperd: Shepperd drone tender (frigate)", 
 
-ngcModAncienExplorerSalvageNo,NewGameOptionSelected,$option == ngcModAncienExplorerSalvageNo,"FireAll ngcModAncienExplorerCreditOption",,,
+ngcModAncienExplorerSalvageNo,NewGameOptionSelected,$option == ngcModAncienExplorerSalvageNo,"FireAll ngcModAncienExplorerOfficerOption",,,
 ngcModAncienExplorerSalvageRig,NewGameOptionSelected,$option == ngcModAncienExplorerSalvageRig,"NGCAddShip crig_Standard
-FireAll ngcModAncienExplorerCreditOption",,,
+FireAll ngcModAncienExplorerOfficerOption",,,
 ngcModAncienExplorerSalvageShepperd,NewGameOptionSelected,$option == ngcModAncienExplorerSalvageShepperd,"NGCAddShip shepherd_Frontier
+FireAll ngcModAncienExplorerOfficerOption",,,
+
+# Salvage rig
+ngcModAncienExplorerOfficer,ngcModAncienExplorerOfficerOption,,"SetTooltip ngcModAncienExplorerOfficer1 ""+ 1 officer""","Are you the only officer in your fleet?","0:ngcModAncienExplorerOfficer0:I am good by myself !
+1:ngcModAncienExplorerOfficer1: I have my best friend with me.",
+
+ngcModAncienExplorerOfficer0,NewGameOptionSelected,$option == ngcModAncienExplorerOfficer0,"FireAll ngcModAncienExplorerCreditOption",,,
+ngcModAncienExplorerOfficer1,NewGameOptionSelected,$option == ngcModAncienExplorerOfficer1,"SetTextHighlights ""level 1 officer""
+$ngcAddOfficer = true
 FireAll ngcModAncienExplorerCreditOption",,,
 
 # Credit
@@ -171,7 +180,9 @@ ngcModAncienExplorerSupply,ngcModAncienExplorerSupplyOption,,,"Maybe some more s
 4:ngcModAncienExplorerSupply100: 100 
 5:ngcModAncienExplorerSupply200: 200
 6:ngcModAncienExplorerSupply500: 500
-7:ngcModAncienExplorerSupply1000: 1000",
+7:ngcModAncienExplorerSupply1000: 1000
+8:ngcModAncienExplorerSupply2000: 2000",
+
 
 ngcModAncienExplorerSupplyNo,NewGameOptionSelected,$option == ngcModAncienExplorerSupplyNo,"FireAll ngcModAncienExplorerEndOption",,,
 ngcModAncienExplorerSupply50,NewGameOptionSelected,$option == ngcModAncienExplorerSupply50,"NGCAddCargo RESOURCES supplies 50
@@ -184,7 +195,17 @@ ngcModAncienExplorerSupply500,NewGameOptionSelected,$option == ngcModAncienExplo
 FireAll ngcModAncienExplorerEndOption",,,
 ngcModAncienExplorerSupply1000,NewGameOptionSelected,$option == ngcModAncienExplorerSupply1000,"NGCAddCargo RESOURCES supplies 1000
 FireAll ngcModAncienExplorerEndOption",,,
+ngcModAncienExplorerSupply2000,NewGameOptionSelected,$option == ngcModAncienExplorerSupply2000,"NGCAddCargo RESOURCES supplies 2000
+FireAll ngcModAncienExplorerEndOption",,,
+
+
 
 
 # End of mod
-ngcModAncienExplorerEnd,ngcModAncienExplorerEndOption,,,"End of modded start, do not hesitate to give feedback","0:ngcNormal:Continue",
+ngcModAncienExplorerEnd,ngcModAncienExplorerEndOption,,"FireAll NGCDifficultyOptions","End of modded start, do not hesitate to give feedback. normal difficulty selected",,
+
+ngcDifficulty,NGCDifficultyOptions,,"SetTooltip ngcEasy ""- Your ships take 25% less damage\n- Sensor range increased by 500 units\n- Salvage increased by 50%""
+SetTooltipHighlightColors ngcEasy hColor hColor hColor
+SetTooltipHighlights ngcEasy ""25%"" ""500"" ""50%""
+SetTooltip ngcNormal ""Default settings balanced for a challenging experience.""","Select the campaign difficulty level. ""Easy"" is recommended for a first-time player.","0:ngcNormal:Normal
+1:ngcEasy:Easy",

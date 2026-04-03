@@ -4,6 +4,6 @@
     "utility":"true",
 	"author":"Lemril",
 	"version":"1.0.0",
-	"description":"Custom game start that let you choose your ship from a predefined selection",
-    "gameVersion":"0.97a-RC6",
+	"description":"Custom game start that let you choose your ship from a predefined selection.\n This mod is planned to be a base, you can edit it to your desire (with a text editor), there is a csv with each line that reference a variant that can be found here starsector-core\\data\\variants \n Ex. : Shrike : shrike_Attack : ngcModAncienExplorerEscort2Shrike,NewGameOptionSelected,$option == ngcModAncienExplorerEscort2Shrike,NGCAddShip shrike_Attack ",
+    "gameVersion":"0.98a-RC8"
 }
